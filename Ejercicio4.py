@@ -31,6 +31,7 @@ arbol.fit(x_train, y_train)
 
 arbolPre = arbol.predict(x_test)
 
+#Mostramos resultados de la prediccion
 print("Prediccion: ",arbolPre[0:5])
 print("Valores Reales: ", y_test[0:5])
 
