@@ -1,17 +1,14 @@
 import pandas as pd
 
-df = pd.read_csv("D:/Tareas/INF354/Datasets/StudentsPerformance.csv")
+df = pd.read_csv("D:/Tareas/INF354/Datasets/car.csv")
 
-#graficamos la cantidad de estudiantes que se preparanron antes del examen
-graf = df['test preparation course'].value_counts()
-graf.plot(kind='bar')
+#graficamos la preferencia en la calificación
+graf = df['calificacion'].value_counts()
+#graf.plot(kind='bar')
+#Graficamos el tamaño de los autos en forma de torta
+import matplotlib.pyplot as plt
+pp = df['tamano'].value_counts()
 
-#Graficamos la media de las notas 
-"""import matplotlib.pyplot as plt
-materias = ['Matemáticas', 'Literatura', 'Escritura']
-medias = [df["math score"].mean(), df["reading score"].mean(), df["writing score"].mean()]
-plt.bar(materias, medias)
+plt.pie([pp['small'], pp['med'], pp['big']], labels=['Pequeño', 'Mediano', 'Grande'], colors=['orange', 'red', 'cyan'], explode=[0.1, 0.1, 0.1], shadow=True, autopct='%.2f%%')
 plt.show()
-
-"""
 
